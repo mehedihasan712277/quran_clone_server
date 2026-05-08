@@ -1,7 +1,7 @@
 import express from "express";
 import helmet from "helmet";
 import cors from "cors";
-// import router from "./routes";
+import router from "./routes";
 import errorHandler from "./utils/errorHandler";
 import AppError from "./utils/AppError";
 
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-// app.use("/api", router);
+app.use("/api", router);
 
 // Healthcheck / root route (optional placement)
 app.get("/", (req, res) => {
