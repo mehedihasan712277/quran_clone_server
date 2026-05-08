@@ -4,6 +4,8 @@ export interface IAudio extends Document {
     name: string;
     index: number;
     audioUrls: string[];
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 const AudioSchema = new Schema<IAudio>(
