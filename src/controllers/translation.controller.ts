@@ -14,7 +14,7 @@ export const createTranslation = async (req: Request, res: Response) => {
 
 // GET all translations
 export const getAllTranslations = async (req: Request, res: Response) => {
-    const translations = await Translation.find();
+    const translations = await Translation.find().sort({ index: 1 });
 
     res.status(200).json({
         success: true,

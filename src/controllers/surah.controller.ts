@@ -14,7 +14,7 @@ export const createSurah = async (req: Request, res: Response) => {
 
 // GET all surahs
 export const getAllSurahs = async (req: Request, res: Response) => {
-    const surahs = await Surah.find();
+    const surahs = await Surah.find().sort({ index: 1 });
 
     res.status(200).json({
         success: true,

@@ -14,7 +14,7 @@ export const createAudio = async (req: Request, res: Response) => {
 
 // GET all audios
 export const getAllAudios = async (req: Request, res: Response) => {
-    const audios = await Audio.find();
+    const audios = await Audio.find().sort({ index: 1 });
 
     res.status(200).json({
         success: true,

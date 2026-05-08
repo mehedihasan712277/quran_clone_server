@@ -14,7 +14,7 @@ export const createSurahName = async (req: Request, res: Response) => {
 
 // GET all surah names
 export const getAllSurahNames = async (req: Request, res: Response) => {
-    const surahNames = await SurahName.find();
+    const surahNames = await SurahName.find().sort({ number: 1 });
 
     res.status(200).json({
         success: true,
